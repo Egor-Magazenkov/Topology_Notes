@@ -1,0 +1,100 @@
+\documentclass[a4paper, 12pt]{book}
+
+\title{Рассуждения об общей и дифференциальной топологии, а также о дифференциальной геометрии}
+\author{Магазенков Е. Н.}
+
+\usepackage{itmobook}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\topX}{$\left(X,\, \Omega_{X}\right)$}
+\newcommand{\Y}{\mathbf{Y}}
+\newcommand{\topY}{$\left(Y,\, {\Omega_{Y}}\right)$}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\topZ}{$\left(Z,\,{\Omega_{Z}}\right)$}
+
+\let\oldforall\forall
+\renewcommand{\forall}{\oldforall \, }
+\let\oldexist\exists
+\renewcommand{\exists}{\oldexist \: }
+
+\newcommand{\st}{\; : \;}
+
+\newcommand{\inv}[1]{#1^{-1}}
+
+\newcommand*{\open}{\raisebox{-0.75ex}{\begin{tikzpicture}
+		\draw (0,0) node {$\subset$};
+		\draw (0.1em, -0.575ex) circle (0.125em);
+\end{tikzpicture}}}
+\newcommand*{\closed}{\raisebox{-0.75ex}{\begin{tikzpicture}
+			\draw (0,0) node {$\subset$};
+			\draw[thick] (0.1em, -0.35ex) -- (0.3em, -0.85ex);
+\end{tikzpicture}}}
+
+\newcommand{\cl}[1]{\mathrm{Cl}\left(#1\right)}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\newcommand{\image}[2]{
+    {\begin{center}
+   \incfig[0.8]{#1}
+   \captionof{figure}{#2 \label{#1}}  \par
+ \end{center}}
+}
+
+
+\newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
+\newcommand{\mysetminusT}{\mysetminusD}
+\newcommand{\mysetminusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
+\newcommand{\mysetminusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
+
+\renewcommand{\setminus}{\mathbin{\mathchoice{\mysetminusD}{\mysetminusT}{\mysetminusS}{\mysetminusSS}}}
+
+\newcommand{\homeo}{\overset{\text{\tiny homeo}}{\cong}}
+\begin{document}
+	
+	\renewcommand{\contentsname}{\hfillОГЛАВЛЕНИЕ\hfill} 
+	\frontmatter
+	\titlepage
+	
+	\doublespacing
+	\tableofcontents
+	\let\cleardoublepage\clearpage
+	\singlespacing
+	
+	\mainmatter
+	
+	\pagestyle{style}
+	
+	
+	\chapter{Общая топология}
+	\epigraph{Невозможна реальность, которая была бы полностью независима от ума, постигающего её.	\leavevmode
+	}{\itshape Анри Пуанкаре\\ французский математик,\\ один из основоположников топологии}
+	
+    Данная глава посвящена некоторому введению в раздел математики, называющийся топологией. Говоря простыми словами, можно описать вопросы, на которые отвечают топологи, как некий анализ объектов на основе лишь их формы и свойств, без опоры на такие характеристики как длины, углы, площади и т.д. При этом оказывается, что такой взгляд на пространства (будем честны -- именно вокруг понятия топологического пространства будут крутиться дальнейшие рассуждения) появляется повсеместно в кардинально различных сферах математики, в том числе и в курсах математического анализа, с которыми читатель уже наверняка знаком. 
+
+    При этом в названии главы также есть слово \textit{общая}. В понятие общей топологии мы будем включать то, что часто еще называют элементарной топологией; ту часть всей науки, которая практически стала большой частью общематематического языка; ту часть, которая является некоторой базой в изучении всей топологии и построена, в большинстве, на введении понятий и рассмотрении некоторых свойств. Можно сказать, что мы представляем здесь свод некоторых правил (состоящий из определений и связывающих их лемм, теорем, утверждений), регулирующих поведение внутри данных пространств. А такими пространствами является практически любое, известное вам пространство.
+
+
+	
+	\include{./Chapter_1/Sections/Basic_definitions}
+	\include{./Chapter_1/Sections/Continuous_maps}
+	\include{./Chapter_1/Sections/Separation_axioms}
+	\include{./Chapter_1/Sections/Countability_axioms}
+	\include{./Chapter_1/Sections/Compactness}
+	\include{./Chapter_1/Sections/Connectedness}
+	\include{./Chapter_1/Sections/Quotient}
+	\include{./Chapter_1/Sections/Constructions}
+	\include{./Chapter_1/Sections/Homotopy}
+	\include{./Chapter_1/Sections/Fundamental_group}
+	\include{./Chapter_1/Sections/Cover}
+	\include{./Chapter_1/Sections/Van_Campen}
+	
+
+\end{document}
