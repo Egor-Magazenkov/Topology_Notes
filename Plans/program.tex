@@ -1,0 +1,142 @@
+\documentclass[a4paper,14pt]{extarticle}
+\usepackage[utf8]{inputenc} % UTF-8 кодировка
+\usepackage[russian]{babel} % Русский язык
+\usepackage{indentfirst} % красная строка в первом параграфе в главе
+\usepackage{amsmath, amsfonts, amssymb, amsthm} % Набор пакетов для математических текстов
+\usepackage{cancel} % зачеркивание для сокращений
+\usepackage[pdftex]{graphicx} % вставка рисунков
+\usepackage{wrapfig, subcaption} % вставка фигур, обтекая текст
+\usepackage{caption} % для настройки подписей
+\usepackage{tikz} % рисование
+\usepackage{circuitikz}
+\usepackage{pgfplots} % графики
+\usepackage[unicode, pdftex]{hyperref} % гиперссылки
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.45\textwidth}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+\pdfsuppresswarningpagegroup=1
+
+
+\begin{document}
+\centering
+\textbf{ \Large Примерный план-программа курса общей топологии (и куска алгебры)}
+
+\textit{\large 04.04.2024 --- 13.04.2024}
+\pagenumbering{gobble}
+
+    \begin{longtable}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.65\linewidth}|}
+        \hline
+         \bfseries Дата & \bfseries Темы & \bfseries Параграфы\\
+        \hline
+         \multirow{2}*{04.04} & Основные определения & 
+                                         \begin{enumerate} 
+                                             \item Топологическое пространство + стандартная топология на $\mathbb{R}$
+                                             \item База топологии
+                                             \item \textit{Воспоминания:} Метрики и различные шары
+                                             \item Порожденная метрикой топология
+                                             \item Стандартная топология + сравнение с матанализом
+                                             \item Топология на подпространстве, относительность открытости
+                                             \item Расположение точек в пространстве
+                                         \end{enumerate} \\
+        \cline{2-3}
+                                  & Непрерывность и гомеоморфизмы & 
+                                        \begin{enumerate}
+                                             \item Непрерывность: равносильные определения
+                                             \item Гомеоморфизм: определение и интуиция
+                                             \item Примеры гомеоморфизмов
+                                         \end{enumerate} \\
+       \hline
+        \multirow{4}{*}{06.04} & Топологические конструкции & 
+                                        \begin{enumerate}
+                                            \item Топология произведения
+                                            \item Фактортопология
+                                            \item Конструкции на основе фактортопологии
+                                        \end{enumerate} \\
+       \cline{2-3}
+                               & Примеры различных топологий & 
+                                        \begin{enumerate}
+                                            \item Простейшие примеры
+                                            \item Различные склейки: лента Мебиуса, тор, бутылка Клейна\dots
+                                            \item $M_g$, $N_g$, ?Проективные пространства?
+                                        \end{enumerate}
+                                        \\
+       \cline{2-3}
+                               & Аксиомы отделимости &
+                                        \begin{enumerate}
+                                            \item $T_0$
+                                            \item  $T_1$
+                                            \item $T_2$
+                                            \item $R\; + \; T_3$ 
+                                            \item $T_4$ 
+                                        \end{enumerate} 
+                                        \\
+      \cline{2-3}
+                               & Аксиомы счетности & 
+                                        \begin{enumerate}
+                                            \item Сепарабельность
+                                            \item I аксиома счетности
+                                            \item II аксиома счетности
+                                        \end{enumerate}
+                                        \\
+      \hline
+      \multirow{4}{*}{11.04} & Компактность & 
+                                        \begin{enumerate}
+                                            \item Компактность
+                                            \item Секвенциальный компакт
+                                            \item Паракомпактность
+                                            \item ?Разбиение единицы?
+                                        \end{enumerate} \\
+      \cline{2-3}
+                             & Связность & 
+                                        \begin{enumerate}
+                                            \item Связность
+                                            \item Линейная связность
+                                            \item ?Локальная линейная связность?
+                                        \end{enumerate}
+                                        \\
+      \cline{2-3}
+                             & Разговор про петли & 
+                                        \begin{enumerate}
+                                            \item Введение
+                                            \item Ретракты
+                                            \item Гомотопии
+                                        \end{enumerate}
+                                        \\
+      \cline{2-3}
+                             & \textit{Воспоминания:} группы &
+                                        \begin{enumerate}
+                                            \item Определение
+                                            \item Гомо- и изоморфизмы
+                                        \end{enumerate}
+                                        \\
+      \hline
+      \pagebreak
+      \hline
+      \multirow{2}{*}{13.04} & Фундаментальная группа & 
+                                        \begin{enumerate}
+                                            \item Определение
+                                            \item Односвязность
+                                        \end{enumerate}
+                                        \\
+      \cline{2-3}
+                             & Вычисление $\pi_1$ & 
+                                        \begin{enumerate}
+                                            \item Окружность (без доказательства)
+                                            \item $M_g$,  $N_g$
+                                            \item ?Теорема ван-Кампена?
+                                        \end{enumerate}\\
+      \hline
+
+    \end{longtable}
+\end{document}
