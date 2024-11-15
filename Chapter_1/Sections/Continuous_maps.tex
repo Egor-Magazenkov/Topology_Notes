@@ -35,32 +35,33 @@
 \begin{Proof}
     Докажем в порядке $1 \implies 4 \implies 3 \implies 2 \implies 1$.
 
-    $1\implies 4$ Пояснительный рисунок к доказательству смотри на Рис. \ref{fig:lem1_1to4}.\\
-    Рассмотрим произвольную точку $x\in \cl A$ и некоторую окрестность $U(f(x))$.\\
+    \noindent $1 \Rightarrow 4$ Пояснительный рисунок к доказательству смотри на Рис. \ref{fig:lem1_1to4}.\\
+    Рассмотрим произвольную точку $x\in \cl A$ и произвольную $U(f(x))$.\\
     Тогда из 1: $\exists V(x) \st f(V(x)) \subset U(f(x))$.\\
     Так как $x$ лежит в замыкании $A$, то $\exists a\in A \cap V(x)$.\\
     А значит $f(a) \in f(A) \cap f(V(x)) \subset f(A) \cap U(f(x))$.\\
-    Таким образом,  для любой точки $f(x) \in f(\cl A)$ мы нашли точку $f(a) \in f(A) \cap U(f(x))$.
+    Учётом произвольности выбора окрестности $U(f(x))$  для любой точки $f(x) \in f(\cl A)$ верно, что $f(x) \in \cl f(A)$.
+
     {\begin{center}
         \incfig[0.8]{lem1_1to4}
         \captionof{figure}{Пояснительная картинка к переходу $1\implies 4$ \label{fig:lem1_1to4}}
     \par
     \end{center}}
 
-    $4\implies 3$\\
+    \noindent $4 \Rightarrow 3$\\
     Пусть $F\closed Y$, но $\inv{f}(F)$ не замкнуто.\\
     Рассмотрим точку $d\in \cl{\inv f(F)} \setminus \inv f(F)$.\\
     Тогда $f(d) \in f(\cl{\inv f(F)}) \underset{\text{по 4}}{\subset} \cl{f(\inv f(F))} = \cl{F} = F$.\\
     Однако получается, что  $d\in \inv f (f(d))) \subset \inv f(F)$, что противоречит предположению $d\in \cl{\inv f(F)}\setminus \inv f(F)$.\\
     А значит исходное предположение было неверно и $\inv f (F) \closed X$.
 
-    $3\implies 2$ \\
+    \noindent$3\Rightarrow 2$ \\
     Пусть $F\closed Y$. Тогда по 3: $\inv f(F) \closed X$.\\
     Рассмотрим $U=Y\setminus F \open Y$.\\
-    При этом $\inv f(U) = \inv f(Y\setminus F) = \inv f(Y) \setminus \inv f(F) \open X$.\\
-    А значит $\inv f(F) \closed X$.
+    При этом $\inv f(U) = \inv f(Y\setminus F) = \inv f(Y) \setminus \inv f(F)  = X \setminus \inv f(F)\open X$.\\
+    То есть $\inv f(U) \open X$.
 
-    $2\implies 1$ \\
+    \noindent$2\Rightarrow 1$ \\
     Рассмотрим произвольную точку $x\in X$ и соответствующую ей окрестность $U(f(x)) \open Y$.\\
     По 2 $\inv f(U(f(x))) \open X$.\\
     Так как $x\in \inv f(U(f(x))) $, то можем рассмотреть $V(x) = \inv f(U(f(x)))$.
@@ -130,6 +131,9 @@
 На самые используемые инварианты мы посмотрим в следующих главах, а пока давайте рассмотрим несколько примеров гомеоморфизмов.
 
 \subsection{Примеры гомеоморфизмов}
+
+\
+
 \begin{Ex}
     $[0,1] \homeo [a,b]$.
 
@@ -152,7 +156,7 @@
     \] 
 \end{Ex}
 \begin{Ex}
-    Диск $\mathcal{D}^{n} = \left\{x\in \mathbb{R}^{n} \st \sum\limits_{i=1}^{n} x_i^2 \leqslant  1\right\}$ гомеоморфен полусфере \\$\mathcal{S}^n_+ =  \left\{x\in \mathbb{R}^{n+1} \st \sum\limits_{i=1}^{n} x_i^2 \leqslant  1 ~\&~ x_{n+1} \geqslant 0 \right\}$.
+    Диск $\mathcal{D}^{n} = \left\{x\in \mathbb{R}^{n} \st \sum\limits_{i=1}^{n} x_i^2 \leqslant  1\right\}$ гомеоморфен полусфере \\$\mathcal{S}^n_+ =  \left\{x\in \mathbb{R}^{n+1} \st \sum\limits_{i=1}^{n} x_i^2 =  1  \; \land \; x_{n+1} \geqslant 0 \right\}$.
 
     Построим гомеоморфизм, который можно показать на рисунке (см. Рис. \ref{homeo_disk_halfsphere}), легко понять: нужно просто натянуть диск на полусферу, как кусок резины на поверхность шарика, и не менее просто записать явно.
     \image{homeo_disk_halfsphere}{Пояснительная картинка к построению гомеоморфизма между диском и полусферой}
@@ -211,7 +215,7 @@
     На самом деле, мы нигде явно не показали, что предложенные отображения непрерывны. На самом деле, так как все эти примеры построены в привычном нам пространстве $\mathbb{R}^n$, то можно ссылаться на непрерывности там. Где-то также могут понадобиться непрерывности нормы и проекции, что предлагается рассмотреть в качестве упражнения.
 \end{Note}
     \begin{Task}
-        Покажите непрерывность следующих отображений
+        Докажите следующие утвреждения (топология стандартная):
         \begin{enumerate}
             \item Любая норма $\| \cdot \|$, введенная на $\mathbb{R}^n$, является непрерывным отображением.
             \item Проекция $\pi\st \mathbb{R}^n \supset A \to B \subset \mathbb{R}^k$ является непрерывным отображением.
